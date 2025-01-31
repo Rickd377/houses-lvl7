@@ -1,0 +1,81 @@
+.house-card {
+  $_inner-radius: .6rem;
+  $_padding: 1rem;
+
+  background-color: #f9f9f9;
+  border-radius: $_inner-radius + $_padding;
+  padding: $_padding;
+  box-shadow: 0 20px 40px rgba($black, 0.1);
+  width: 400px;
+  @include flex(start, start, column);
+  gap: .4rem;
+
+  img {
+    border-radius: $_inner-radius;
+  }
+
+  &#noorwegen-card {
+    background: map-get($norway-colors, "light-blue");
+    font-family: 'Lucida Sans', sans-serif;
+  }
+
+  .house-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+
+  .house-location {
+    width: 100%;
+    @include flex(space-between);
+  }
+
+  .house-address {
+    @extend .house-location;
+  }
+
+  .house-capacity {
+    @extend .house-location;
+  }
+
+  .house-price {
+    @extend .house-location;
+  }
+
+  .house-description {
+    line-height: 1.2;
+  }
+
+  .btn-wrapper {
+    width: 100%;
+    @include flex(space-between);
+    gap: 1rem;
+  }
+
+  .favorite-btn {
+    background-color: map-get($norway-colors, "dark-blue");
+    color: $white;
+    outline: 2px solid map-get($norway-colors, "dark-blue");
+    outline-offset: 2px;
+  }
+
+  .buy-btn {
+    background-color: map-get($norway-colors, "turquoise");
+    color: $white;
+    outline: 2px solid map-get($norway-colors, "turquoise");
+    outline-offset: 2px;
+  }
+
+  .favorite-btn,
+  .buy-btn {
+    flex: 1;
+    padding: .6em;
+    border-radius: .5rem;
+    @include flex;
+    gap: .3rem;
+    cursor: pointer;
+  }
+}
+
+.bold {
+  font-weight: 700;
+}
